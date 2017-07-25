@@ -50,6 +50,7 @@ for i in range(20):
     bigPositions = []
 
 for i in range(20):
+    predictedPositions = []
     currentPos = positions[i][0]
     institutionName = shareholders[i+1]['institutionName']
     if currentPos == 0.0:
@@ -63,3 +64,4 @@ for i in range(20):
             #print(positions[i])
             predictedPositions = predict_prices(dates, positions[i][1:8], 8)
             print(institutionName + ' : '+str(predictedPositions))
+            shareholders[i+1]['position0'] = predictedPositions[0]
